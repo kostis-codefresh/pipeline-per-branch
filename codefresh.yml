@@ -18,6 +18,13 @@ steps:
     git: "github-1"
     stage: "clone"
 
+  waitForInputBeforeProduction:
+    type: pending-approval
+    title: Deploy to Production?
+    timeout:
+      duration: 2
+      finalState: denied
+
   test:
     title: "Running test"
     type: "freestyle" # Run any command
