@@ -22,7 +22,7 @@ steps:
   waitForInputBeforeProduction:
     type: pending-approval
     stage: "wait"
-    title: Deploy to Production?
+    title: Deploy to Staging?
     timeout:
       duration: 2
       finalState: denied
@@ -33,7 +33,7 @@ steps:
     image: "alpine:3.10.3" # The image in which command will be executed
     working_directory: "${{clone}}" # Running command where code cloned
     commands:
-      - echo "Running in production"
+      - echo "Running in Staging"
       - cat README.md
     stage: "test"
 
